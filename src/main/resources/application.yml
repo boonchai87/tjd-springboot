@@ -5,9 +5,9 @@ spring:
         #password: password
         #url: jdbc:h2:mem:testdb  #memory
         #driverClassName: org.h2.Driver
-        url: ${JDBC_DATABASE_URL} #jdbc:postgresql://ec2-3-217-68-126.compute-1.amazonaws.com:5432/d3rqnamkvbmsas
-        username: ${JDBC_DATABASE_USERNAME} #btuowaqhddgndo
-        password: ${JDBC_DATABASE_PASSWORD} #80eeb4f2a12f7fa01cdbf23b6b9fa6dbdf7a885f1966e2ad8fc85ef247e9ef4d
+        url: ${JDBC_DATABASE_URL}
+        username: ${JDBC_DATABASE_USERNAME}
+        password: ${JDBC_DATABASE_PASSWORD}
     h2:
         console:
             enabled: true
@@ -27,7 +27,7 @@ spring:
             enabled: false
     data:
         mongodb:
-            uri: mongodb+srv://thaijavadev:smZUAbCejaPfnKx5@cluster0.rdast.mongodb.net/test
-            database: test
+            uri: ${MONGO_DATABASE_URL}
+            #database: test
 server:
     port: ${PORT:5000}

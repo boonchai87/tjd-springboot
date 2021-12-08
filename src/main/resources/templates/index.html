@@ -1,13 +1,17 @@
 <div th:replace="fragments/header.html"/>
 <table class="table table-bordered table-striped">
     <thead>
-        <tr><td>#</td><td>Category</td><td>Topics</td></tr>
+        <tr>
+                <td>#</td><td>Topic</td><td>Title</td>
+            <td>View</td>
+            <td>Answer</td>
+        </tr>
     </thead>
     <tbody>
-        <tr th:each="category : ${categories}">
-            <td th:text="${category.id}">1</td>
-            <td><a href="view.html" th:href="@{'/' + ${category.id}}" th:text="${category.title}">Title ...</a></td>
-            <td th:text="${category.name}">Text ...</td>
+        <tr th:each="row : ${topics}">
+            <td th:text="${row.id}">1</td>
+            <td><a href="view.html" th:href="@{'/' + ${row.id}}" th:text="${row.title}">Title ...</a></td>
+            <td th:text="${category.numView}">Text ...</td>
             <td th:text="${category.numTopic}">NumTopic ...</td>
         </tr>
     </tbody>
