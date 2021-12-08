@@ -29,3 +29,5 @@ spring:
         mongodb:
             uri: mongodb+srv://thaijavadev:smZUAbCejaPfnKx5@cluster0.rdast.mongodb.net/test
             database: test
+server:
+    port: ${PORT:5000}
