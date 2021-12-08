@@ -1,0 +1,15 @@
+<div th:replace="fragments/header.html"/>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr><td>#</td><td>Category</td><td>Topics</td></tr>
+    </thead>
+    <tbody>
+    <tr th:each="category : ${categories}">
+        <td th:text="${category.id}">1</td>
+        <td><a href="view.html" th:href="@{'/' + ${category.id}}" th:text="${category.title}">Title ...</a></td>
+        <td th:text="${category.name}">Text ...</td>
+        <td th:text="${category.numTopic}">NumTopic ...</td>
+    </tr>
+    </tbody>
+</table>
+<div th:replace="fragments/footer.html"/>
