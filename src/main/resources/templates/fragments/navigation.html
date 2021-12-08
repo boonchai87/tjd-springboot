@@ -17,31 +17,24 @@
             <li class="nav-item">
                 <a class="nav-link" th:href="@{'/'}">Home</a>
             </li>
-            <?/*
-        <li class="nav-item">
-            <a class="nav-link" href="<?=WEB_URL?>cart.php">ตระกร้าสินค้า<?=getCartCount()?></a>
-            </li>*/?>
             <? if( isRole(ROLE_MEMBER) ){?>
             <li class="nav-item">
-                <a class="nav-link" href="<?=WEB_URL?>member/">Member</a>
+                <a class="nav-link" th:href="@{'/member'}">Member</a>
             </li>
             <? } ?>
             <? if( isRole(ROLE_ADMIN) ){?>
             <li class="nav-item">
-                <a class="nav-link" href="<?=WEB_URL?>admin/">admin</a>
+                <a class="nav-link" th:href="@{'/admin'}">Administrator</a>
             </li>
             <? } ?>
             <? if( !isLogin() ){ ?>
             <li class="nav-item">
-                <a class="nav-link" href="<?=WEB_URL?>register.php">สมัครสมาชิก</a>
+                <a class="nav-link" th:href="@{'/register'}">สมัครสมาชิก</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?=WEB_URL?>login.php">เข้าสู่ระบบ</a>
+                <a class="nav-link" th:href="@{'/login'}">เข้าสู่ระบบ</a>
             </li>
             <? } ?>
-            <li class="nav-item">
-                <a class="nav-link" href="<?=WEB_URL?>aboutus.php">เกี่ยวกับเรา</a>
-            </li>
         </ul>
     </div>
 </nav>
