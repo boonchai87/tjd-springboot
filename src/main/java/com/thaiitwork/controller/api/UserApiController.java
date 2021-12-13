@@ -8,6 +8,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -32,6 +33,7 @@ public class UserApiController {
 
     //@CrossOrigin(origins = "http://localhost:8080")
     @GetMapping("")
+    @PreAuthorize("hasAnyRole('ROLE_USER')")
     public Iterable<User> retrive(){
         return repository.findAll();
     }
