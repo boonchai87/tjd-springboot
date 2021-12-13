@@ -4,6 +4,7 @@ import com.thaiitwork.exception.ResourceNotFoundException;
 import com.thaiitwork.model.User;
 import com.thaiitwork.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +20,7 @@ import java.util.Date;
 @Controller
 @RequestMapping("/user")
 //@PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
+@PreAuthorize("hasAnyRole('ROLE_ADMIN')")
 public class UserController {
     @Autowired
     private UserRepository repository;
