@@ -1,8 +1,15 @@
 <div th:replace="fragments/header.html"/>
+<h1>ยินดีต้อนรับเข้าสู่ springboot tutorial ครับ </h1>
+<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
-                <td>#</td><td>Topic</td><td>Title</td>
+            <td>#</td>
+            <td>Topic</td>
+            <td>Title</td>
             <td>View</td>
             <td>Answer</td>
         </tr>

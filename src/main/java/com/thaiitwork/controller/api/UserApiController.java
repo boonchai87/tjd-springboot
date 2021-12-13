@@ -55,10 +55,4 @@ public class UserApiController {
         repository.findById(id).orElseThrow(() -> new ResourceNotFoundException(User.class.getName(),"id",id));
         repository.deleteById(id);
     }
-
-    @GetMapping("/list2")
-    public List<User> list2(){
-        return userService.getAllUsers();
-    }
-
 }

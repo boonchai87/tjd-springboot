@@ -9,7 +9,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/customer")
+@RequestMapping("/api/public/customer")
 public class CustomerApiController {
     @Autowired
     private CustomerRepository repository;

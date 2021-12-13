@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -14,13 +16,13 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @Builder
 @Entity
-public class Topic extends  BaseModel{
+public class Topic extends BaseModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY,optional = false)
-    //@JoinColumn(name= "category_id",nullable = false )
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    // @JoinColumn(name= "category_id",nullable = false )
     private Category category;
 
     @NotBlank
@@ -29,16 +31,12 @@ public class Topic extends  BaseModel{
     @NotBlank
     private String content;
 
-
-    //private String file;
+    // private String file;
 
     @NotNull
     private Integer numView;
 
     @NotNull
     private Integer numAnswer;
-
-    @OneToOne
-    private User user;
 
 }

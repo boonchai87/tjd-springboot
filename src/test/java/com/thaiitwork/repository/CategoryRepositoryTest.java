@@ -34,7 +34,7 @@ public class CategoryRepositoryTest {
     public void setup(){
         // given
         User u = User.builder()
-                .name("xxx")
+                .userName("xxx")
                 .email("neng87@gmail.com")
                 .build();
         userRepository.save(u);
@@ -51,7 +51,7 @@ public class CategoryRepositoryTest {
                 .numAnswer(0)
                 .numView(0)
                 .content("xxx")
-                .user(u)
+                //.user(u)
                 .build();
         topicRepository.save(topic);
     }

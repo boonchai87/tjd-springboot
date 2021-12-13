@@ -1,15 +1,27 @@
 <div th:replace="fragments/header.html"/>
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr><td>#</td><td>Topic</td><td>Topics</td></tr>
-    </thead>
-    <tbody>
-    <tr th:each="category : ${categories}">
-        <td th:text="${category.id}">1</td>
-        <td><a href="view.html" th:href="@{'/' + ${category.id}}" th:text="${category.title}">Title ...</a></td>
-        <td th:text="${category.name}">Text ...</td>
-        <td th:text="${category.numTopic}">NumTopic ...</td>
-    </tr>
-    </tbody>
-</table>
+<form th:action="@{/register}" method="post" autocomplete="off">
+    <table class="table table-striped">
+        <tbody>
+        <tr>
+            <td><label for="username">username* </label></td>
+            <td><input id="username" type="username" name="userName" placeholder="รหัสผ่าน" autocomplete="off" maxlength="10"></td>
+        </tr>
+        <tr>
+            <td><label for="password">รหัสผ่าน* </label></td>
+            <td><input id="password" type="password" name="password"  autocomplete="off" maxlength="10"></td>
+        </tr>
+        <tr>
+            <td><label for="email">Email address*</label></td>
+            <td><input id="email" type="email" name="email" aria-describedby="emailHelp" placeholder="กรุณาใส่ email" autocomplete="off"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="submit" class="btn btn-primary">ลงทะเบียน</button>
+                <button type="button" class="btn btn-secondary" onclick="history.back()">ยกเลิก</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
 <div th:replace="fragments/footer.html"/>

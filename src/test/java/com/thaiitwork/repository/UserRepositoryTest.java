@@ -23,7 +23,7 @@ class UserRepositoryTest {
         //subject.save(new MyEntity());
         User u = User.builder()
                 .email("neng87@gmail.com")
-                .name("dd")
+                .userName("dd")
                 .password("ddd")
                         .build();
         userRepository.save(u);

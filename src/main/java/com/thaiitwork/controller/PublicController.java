@@ -38,17 +38,7 @@ public class PublicController {
         return "1.0.1";
     }
 
-    // Login form with error
-    @RequestMapping("/login-error")
-    public String loginError(Model model) {
-        model.addAttribute("loginError", true);
-        return "login.html";
-    }
 
-    @GetMapping("/register")
-    public String register(){
-        return "";
-    }
 
     @PostMapping("/doRegister")
     public String doRegister(){

@@ -5,32 +5,38 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import com.thaiitwork.util.Status;
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
 @Data
 public class BaseModel {
+   /*
+    // https://stackoverflow.com/questions/42366763/hibernate-creationtimestamp-updatetimestamp-for-calendar
 	@Column(nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     @CreatedDate
-    protected Date createdAt;
+    protected Date created;
 
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     @LastModifiedDate
-    protected Date updatedAt;
+    protected Date updated;
     
-    //@NotBlank
+    @NotNull
+    //@OneToOne
+    //protected User createdBy;
     protected Integer createdBy;
     
-    //@NotBlank
+    @NotNull
+    //@OneToOne
+    //protected User updatedBy;
     protected Integer updatedBy;
     
-    //@NotNull
-    protected Status status;
+    @NotNull
+    protected Status status;*/
 
 }

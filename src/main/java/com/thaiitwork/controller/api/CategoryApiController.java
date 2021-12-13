@@ -3,7 +3,6 @@ package com.thaiitwork.controller.api;
 import com.thaiitwork.exception.ResourceNotFoundException;
 import com.thaiitwork.model.Category;
 import com.thaiitwork.model.Topic;
-import com.thaiitwork.model.User;
 import com.thaiitwork.repository.CategoryRepository;
 import com.thaiitwork.repository.TopicRepository;
 import io.swagger.annotations.ApiOperation;
