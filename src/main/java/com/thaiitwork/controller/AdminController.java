@@ -14,7 +14,6 @@ public class AdminController {
     private UserRepository userRepository;
 
     public String index(){
-
         return "admin/index";
     }
     @GetMapping("/User")
