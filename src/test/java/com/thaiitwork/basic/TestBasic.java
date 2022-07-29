@@ -49,7 +49,7 @@ public class TestBasic {
         //String[] array = {"H", "H", "-", "H", "H"};
         String str = "HH-HH";
         str = "-H-HH--";// -HTHHT-
-        System.out.println(str.replaceAll("H-", "HT"));
+        //System.out.println(str.replaceAll("H-", "HT"));
 
         //List<String> arrlist = Arrays.asList(array);
         //System.out.println(arrlist);
@@ -75,7 +75,7 @@ public class TestBasic {
         }
         System.out.println(result);*/
 
-
+/*
         Integer[] R = {2, 1, 0, 2};
         Integer[] C = {0, 2, 1, 2};
         List bomb = new ArrayList();
@@ -83,9 +83,9 @@ public class TestBasic {
             bomb.add(String.valueOf(R[i])+String.valueOf(C[i]));
         }
         //System.out.println(bomb);
-      /*  List<Integer> r = Arrays.asList(R);
-        List<Integer> c = Arrays.asList(C);*/
-        /*
+        List<Integer> r = Arrays.asList(R);
+        List<Integer> c = Arrays.asList(C);
+
         int N=3;
         String[][] data = new String[N][N];
         for(int i=0;i<N;i++){
