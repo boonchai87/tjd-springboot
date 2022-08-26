@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
+import java.util.Properties;
 
 @Controller
 @RequestMapping("/public")
@@ -59,13 +60,13 @@ public class PublicController {
 
     @GetMapping("/getProp")
     //@ResponseBody
-    public ResponseEntity<Map> getProp() {
+    public ResponseEntity<Properties> getProp() {
         return ResponseEntity.ok(System.getProperties());
     }
 
     //@Value("${spring.datasource.url}") // looking in yml success
     //@Value("#{systemProperties['sun.desktop']}") // get from system properties
-    @Value("${JDBC_DATABASE_URL}")
+    ///@Value("${JDBC_DATABASE_URL}")
     private String bar;
 
     @GetMapping("/getEnvironment")

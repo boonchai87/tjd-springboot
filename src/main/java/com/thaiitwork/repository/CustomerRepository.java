@@ -1,8 +1,8 @@
 package com.thaiitwork.repository;
 
 import com.thaiitwork.model.Customer;
-import org.springframework.data.mongodb.repository.MongoRepository;
+///import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface CustomerRepository extends MongoRepository<Customer,Long> {
-
-}
+//public interface CustomerRepository extends MongoRepository<Customer,Long> {
+//
+//}

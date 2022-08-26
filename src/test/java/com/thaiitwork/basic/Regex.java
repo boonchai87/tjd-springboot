@@ -82,12 +82,24 @@ public class Regex {
 //        System.out.println(Pattern.matches("[amn]*", "ammmna"));//true (a or m or n may come zero or more times)
 //        System.out.println(Pattern.matches("[amn]*", "n"));//false
 
-        System.out.println(Pattern.matches("[amn]*",""));
-        System.out.println(Pattern.matches("[amn]*","n"));
-        System.out.println(Pattern.matches("[amn]+",""));//false
-        System.out.println(Pattern.matches("[amn]+","namnna"));
-        System.out.println(Pattern.matches("[amn]?","n"));
-        System.out.println(Pattern.matches("[amn]?","nanm"));// false
-        System.out.println(Pattern.matches("[amn]?",""));
+//        System.out.println(Pattern.matches("[amn]*",""));
+//        System.out.println(Pattern.matches("[amn]*","n"));// 0 หรือ ไม่จำกัด
+//        System.out.println(Pattern.matches("[amn]+",""));//false
+//        System.out.println(Pattern.matches("[amn]+","namnna"));// อย่างน้อย 1
+//        System.out.println(Pattern.matches("[amn]?","n"));// true ถูกต้องเพราะเป็น 1 ตัว
+//        System.out.println(Pattern.matches("[amn]?","nanm"));// false  one or zero
+//        System.out.println(Pattern.matches("[amn]?",""));
+
+        System.out.println(Pattern.matches(".",""));//false
+        System.out.println(Pattern.matches(".[^amn]","td"));//true
+        System.out.println(Pattern.matches("[a-zA-Z]","d"));//true
+        System.out.println(Pattern.matches("[a-d[m-p]]",""));//false
+        System.out.println(Pattern.matches("[a-d[m-p]]","m"));//true or
+        System.out.println(Pattern.matches("[a-z&&[def]]","a"));// false
+        System.out.println(Pattern.matches("[a-z&&[def]]","d"));// true
+        System.out.println(Pattern.matches("[a-z&&[def]]","d"));//true
+        System.out.println(Pattern.matches("[a-z&&[^bc]]","z"));//true
+        System.out.println(Pattern.matches("[a-z&&[^m-p]]","a"));//true
+
     }
 }

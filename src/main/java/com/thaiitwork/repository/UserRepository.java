@@ -1,12 +1,18 @@
 package com.thaiitwork.repository;
 
+import com.thaiitwork.model.IdsOnly;
 import com.thaiitwork.model.User;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
-public interface UserRepository extends PagingAndSortingRepository<User,Long> {
+public interface UserRepository extends PagingAndSortingRepository<User, Long> {
     User findByEmail(String email);
+
     User findByUserName(String username);
     //List<User> findAll();
 
@@ -23,4 +29,10 @@ public interface UserRepository extends PagingAndSortingRepository<User,Long> {
     /*@Query("update User u set u.status = :status where u.name = :name")
     int updateUserSetStatusForName(@Param("status") Integer status,
                                    @Param("name") String name);*/
+
+    // https://stackoverflow.com/questions/70668990/get-result-from-native-query-using-java-interface
+    @Query(value = " select userName as userName,email as email  from User ")// must use alias
+    //List<IdsOnly> getAllOnlyIds(@Param("offset") int offset, @Param("limit") int limit);
+    List<IdsOnly> getAllOnlyIds();
+
 }
